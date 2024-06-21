@@ -1,0 +1,42 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/ruby-rails-postgres
+{
+    "name": "Fonix-Test",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "app",
+    "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+    "features": {
+        "ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
+            "packages": "libpq-dev, libvips" // For pg gem
+        },
+        "ghcr.io/devcontainers/features/git:1": {
+            "version": "latest"
+        },
+        "ghcr.io/devcontainers/features/ruby:1": {
+            "version": "3.2.0" // Change Ruby version as required
+        },
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": 19 // Change Node version as required
+        },
+        "ghcr.io/devcontainers/features/common-utils:1": {
+            "username": "vscode",
+            "uid": 1000,
+            "gid": 1000,
+            "installZsh": true,
+            "installOhMyZsh": true,
+            "configureZshAsDefaultShell": true,
+            "upgradePackages": true
+        }
+    },
+    // Use 'forwardPorts' to make a list of ports inside the container available locally.
+    // This can be used to network with other containers or the host.
+    "forwardPorts": [
+        3000,
+        5432,
+        6379
+    ]
+    // Use 'onCreateCommand' to run commands while the container is creating.
+    // "onCreateCommand": "gem install solargraph",
+    // Use 'postCreateCommand' to run commands after the container is created.
+    // "postCreateCommand": ".devcontainer/setup.sh"
+}
