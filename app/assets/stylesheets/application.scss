@@ -1,4 +1,166 @@
 // Sassy
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
+$blue: #66CED6;
+$green: #98F1A2;
+$lightGrey: #F1F1F1;
+$grey: #5D707F;
+$purple: #A7A5C6;
+$red: #9F3A62;
+$black: #1E1E1E;
+$white: #FFFFFF;
+
+$defaultFont: "Poppins", Arial, sans-serif;
+
 body {
-  background-color: red;
+  background-color: $lightGrey;
+  padding: 0;
+  margin: 0;
+  font-family: $defaultFont;
+}
+
+.app {
+  &-header {
+    background-color: $black;
+    color: $white;
+    display: grid;
+    grid-template-rows: auto auto;
+
+    &--brand {
+      text-align: center;
+      padding: 1.5rem 0;
+
+      h1 {
+        padding: 0;
+        margin: 0;
+        text-transform: uppercase;
+      }
+    }
+
+    &--nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+
+        a, button {
+          background-color: transparent;
+          border: none;
+          display: inline-block;
+          padding: 1rem 1rem;
+          color: $white;
+          text-decoration: none;
+          width: 100%;
+          text-align: center;
+          box-sizing: border-box;
+          font-size: 1rem;
+          font-family: $defaultFont;
+          font-weight: 700;
+
+          &.danger {
+            color: $red;
+
+            &:hover {
+              background-color: $red;
+              color: $white;
+            }
+          }
+
+          &:hover {
+            background-color: $grey;
+          }
+        }
+      }
+    }
+  }
+
+  &-main {
+    padding: 1rem;
+  }
+
+  &-footer {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.field {
+  width: 100%;
+  padding: 0.5rem 0;
+  display: block;
+  box-sizing: border-box;
+
+  label {
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
+
+  input {
+    background-color: $white;
+    color: $black;
+    font-family: $defaultFont;
+    border: none;
+    outline: none;
+    border-radius: 0px;
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+
+  &--checkbox {
+    display: grid;
+    grid-template-columns: 2rem 1fr;
+
+    input {
+      width: 1.5rem;
+      height: 1.5rem;
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
+
+    label {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+  }
+}
+
+.btn {
+  background-color: $blue;
+  color: $black;
+  border: 2px solid $blue;
+  width: 100%;
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.alert {
+  display: block;
+  padding: 0.5rem;
+  margin: 0;
+  background-color: $grey;
+  color: $white;
+  text-align: center;
+
+  &--notice {
+    background-color: $green;
+    color: $black;
+  }
+
+  &--danger {
+    background-color: $red;
+    color: $white;
+  }
 }

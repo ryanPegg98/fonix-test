@@ -6,6 +6,7 @@ ruby '3.2.0'
 
 gem 'bootsnap', require: false
 gem 'dartsass-rails', '~> 0.5.0'
+gem 'devise', '~> 4.9', '>= 4.9.4'
 gem 'importmap-rails'
 gem 'jbuilder'
 gem 'pg', '~> 1.1'

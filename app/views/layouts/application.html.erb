@@ -17,12 +17,24 @@
       </section>
       <nav class="app-header--nav">
         <ul>
-          <li><%= link_to "Home", "#" %></li>
-          <li><%= link_to "Chatrooms", "#" %></li>
-          <li><%= link_to "Logout", "#" %></li>
+          <% if current_user.present? %>
+            <li><%= link_to "Home", "#" %></li>
+            <li><%= link_to "Chatrooms", "#" %></li>
+            <li><%= button_to "Logout", destroy_user_session_path, method: :delete, class: 'danger' %></li>
+          <% end %>
         </ul>
       </nav>
     </header>
-    <%= yield %>
+    <section class="alerts">
+      <%= content_tag(:p, notice, class: 'alert alert--notice') if notice.present? %>
+      <%= content_tag(:p, alert, class: 'alert alert--danger') if alert.present? %>
+    </section>
+    <main class="app-main">
+      <%= yield %>
+    </main>
+    </main>
+    <footer class="app-footer">
+      <p>&copy; Fonix Test 2024</p>
+    </footer>
   </body>
 </html>
