@@ -27,6 +27,15 @@ messages received since the user has sent his last message.
 
 ## Get Started
 
+### Requirements
+
+* Ruby 3.2.0
+* Rails 7.1.3
+* Postgresql
+* Redis
+
+### Setup
+
 In order to get this application working you will need to generate your `database.yml` file by running the command below.
 
 ```bash
@@ -41,4 +50,12 @@ The next step will be to bundle the application and set up the database ready to
 bundle
 bin/rails db:create
 bin/rails db:schema:load
+```
+
+ ### Running
+
+The easiest way to run this application would be to ensure foreman has been installed and then run the command to start using `Procfile.dev`
+
+```bash
+bin/dev 
 ```

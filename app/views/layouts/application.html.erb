@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>FonixTest</title>
+    <title>Fonix Test</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,6 +11,18 @@
   </head>
 
   <body>
+    <header class="app-header">
+      <section class="app-header--brand">
+        <h1>Fonix Test</h1>
+      </section>
+      <nav class="app-header--nav">
+        <ul>
+          <li><%= link_to "Home", "#" %></li>
+          <li><%= link_to "Chatrooms", "#" %></li>
+          <li><%= link_to "Logout", "#" %></li>
+        </ul>
+      </nav>
+    </header>
     <%= yield %>
   </body>
 </html>
