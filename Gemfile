@@ -23,7 +23,11 @@ gem 'tzinfo-data', platforms: %i[windows jruby]
 group :development, :test do
   gem 'debug', platforms: %i[mri windows]
 
+  gem 'factory_bot_rails', '~> 6.4', '>= 6.4.3'
+  gem 'faker', '~> 3.4', '>= 3.4.1'
+  gem 'rspec-rails', '~> 6.1', '>= 6.1.3'
   gem 'rubocop-rails', '~> 2.25'
+  gem 'shoulda-matchers', '~> 6.2'
 end
 
 group :development do
