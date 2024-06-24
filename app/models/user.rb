@@ -6,4 +6,8 @@ class User < ApplicationRecord
 
   # Validaions
   validates :name, presence: true
+
+  # Associations
+  has_many :chatroom_users
+  has_many :chatrooms, through: :chatroom_users
 end
