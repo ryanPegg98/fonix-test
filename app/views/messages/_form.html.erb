@@ -1,0 +1,6 @@
+<%= form_for message, url: chatroom_messages_path(chatroom), method: :post, html: { class: "new-message" } do |f| %>
+  <div class="field">
+    <%= f.text_field :content, placeholder: t('chatrooms.placeholders.new_message') %>
+  </div>
+  <%= f.submit t('actions.send'), class: "btn" %>
+<% end %>

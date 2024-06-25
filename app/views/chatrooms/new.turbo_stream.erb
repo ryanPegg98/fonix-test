@@ -1,0 +1,5 @@
+<%= turbo_stream.replace "new_chatroom" do %>
+  <%= form_for @chatroom, url: chatrooms_path, method: :post do |f| %>
+    <%= render "form", f: f %>
+  <% end %>
+<% end %>

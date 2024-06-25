@@ -1,0 +1,13 @@
+<h1><%= @chatroom.name%></h1>
+<%= link_to t('actions.back'), chatrooms_path %>
+
+<section class="messages">
+  <%= turbo_stream_from "chatroom_#{@chatroom.id}" %>
+  <%= turbo_frame_tag "messages" do %>
+    <%= render @chatroom.messages %>
+  <% end %>
+</section>
+
+<%= turbo_frame_tag "new_message" do %>
+  <%= render "messages/form", message: @new_message, chatroom: @chatroom %>
+<% end %>

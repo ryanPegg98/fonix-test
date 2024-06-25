@@ -1,0 +1,15 @@
+<p>Hi <%= @user.name %>,</p>
+
+<p>Here is your breakdown of the chatrooms:</p>
+
+<% @stats.each do |stat| %>
+  <hr />
+
+  <p><b>Chatroom: <%= stat[:chatroom].name %></b></p>
+
+  <p><%= pluralize(stat[:message_count], 'message') %>  this week.</p>
+
+  <p><<%= pluralize(stat[:since_last_message], 'message') %> since your last message on <%= stat[:users_last_message] %>.</p>
+<% end %>
+
+<hr />

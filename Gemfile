@@ -12,12 +12,12 @@ gem 'jbuilder'
 gem 'pg', '~> 1.1'
 gem 'puma', '>= 5.0'
 gem 'rails', '~> 7.1.3', '>= 7.1.3.4'
+gem 'redis', '>= 4.0.1'
 gem 'sprockets-rails'
 gem 'stimulus-rails'
 gem 'turbo-rails'
 gem 'tzinfo-data', platforms: %i[windows jruby]
 
-# gem "redis", ">= 4.0.1"
 # gem "kredis"
 # gem "bcrypt", "~> 3.1.7"
 # gem "image_processing", "~> 1.2"
@@ -27,6 +27,8 @@ group :development, :test do
   gem 'foreman', '~> 0.88.1'
 
   # Testing
+  gem 'capybara'
+  gem 'database_cleaner', '~> 2.0', '>= 2.0.2'
   gem 'factory_bot_rails', '~> 6.4', '>= 6.4.3'
   gem 'faker', '~> 3.4', '>= 3.4.1'
   gem 'rspec-rails', '~> 6.1', '>= 6.1.3'

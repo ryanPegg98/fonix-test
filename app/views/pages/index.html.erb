@@ -1,8 +1,11 @@
 <article>
   <section>
-    <h2>Panels</h2>
-  </section>
-  <section>
     <h2>Chatrooms</h2>
+
+    <ol>
+      <% current_user.chatrooms.order(name: :asc).each do |chatroom| %>
+        <li><%= link_to chatroom.name, chatroom_path(chatroom) %></li>
+      <% end %>
+    </ol>
   </section>
 </article>

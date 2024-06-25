@@ -1,0 +1,17 @@
+ <% if f.object.errors.any? %>
+  <div class="errors">
+      <p>Unable to save changes:</p>
+      <ul>
+        <% f.object.errors.full_messages.each do |error| %>
+          <li><%= error %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+<%= f.submit "Create", class: "btn btn--success" %>

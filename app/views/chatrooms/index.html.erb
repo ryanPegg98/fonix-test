@@ -1,0 +1,31 @@
+<h1><%= t('chatrooms.title') %></h1>
+
+<%= link_to "New Chatroom", new_chatroom_path, class: "btn btn--success" %>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= t('chatrooms.fields.name') %></th>
+      <th><%= t('chatrooms.fields.members') %></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if @chatrooms.any? %>
+      <% @chatrooms.each do |chatroom| %>
+        <tr>
+          <%= content_tag(:td, chatroom.name) %>
+          <%= content_tag(:td, chatroom.chatroom_users.size) %>
+          <td>
+            <%= link_to t('actions.view'), chatroom_path(chatroom), class: "btn" if chatroom.users.pluck(:id).include?(current_user.id) %>
+            <%= button_to t('actions.join'), chatroom_join_path(chatroom), method: :post, data: { confirm: "Are you sure?" }, class: "btn btn--success" if !chatroom.users.pluck(:id).include?(current_user.id) %>
+          </td>
+        </tr>
+      <% end %>
+    <% else %>
+      <tr>
+        <td colspan="2"><%= t('chatrooms.alerts.empty') %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

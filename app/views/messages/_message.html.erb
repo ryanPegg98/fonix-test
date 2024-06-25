@@ -1,0 +1,13 @@
+<%= turbo_stream.append "messages" do %>
+  <article class="message">
+    <div class="message__content">
+      <%= message.content %>
+    </div>
+    <div class="message__author">
+      <%= message.chatroom_user.user.name %>
+    </div>
+    <div class="message__timestamp">
+      <%= message.created_at %>
+    </div>
+  </article>
+<% end %>

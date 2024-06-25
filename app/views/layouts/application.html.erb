@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Fonix Test</title>
+    <title><%= t('app_name') %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -13,14 +13,14 @@
   <body>
     <header class="app-header">
       <section class="app-header--brand">
-        <h1>Fonix Test</h1>
+        <h1><%= t('app_name') %></h1>
       </section>
       <nav class="app-header--nav">
         <ul>
           <% if current_user.present? %>
-            <li><%= link_to "Home", "#" %></li>
-            <li><%= link_to "Chatrooms", "#" %></li>
-            <li><%= button_to "Logout", destroy_user_session_path, method: :delete, class: 'danger' %></li>
+            <li><%= link_to "Home", root_path %></li>
+            <li><%= link_to t('chatrooms.title'), chatrooms_path %></li>
+            <li><%= button_to t('actions.logout'), destroy_user_session_path, method: :delete, class: 'danger' %></li>
           <% end %>
         </ul>
       </nav>
@@ -34,7 +34,7 @@
     </main>
     </main>
     <footer class="app-footer">
-      <p>&copy; Fonix Test 2024</p>
+      <p>&copy; <%= "#{t('app_name')} #{(Date.today + 1.month).year}" %></p>
     </footer>
   </body>
 </html>

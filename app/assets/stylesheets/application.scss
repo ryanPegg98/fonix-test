@@ -144,6 +144,30 @@ body {
   padding: 1rem;
   font-size: 1rem;
   font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+
+  &--danger {
+    background-color: $red;
+    border-color: $red;
+    color: $white;
+
+    &:hover {
+      background-color: lighten($red, 10);
+      border-color: lighten($red, 10);
+    }
+  }
+
+  &--success {
+    background-color: $green;
+    border-color: $green;
+    color: $black;
+
+    &:hover {
+      background-color: lighten($green, 10);
+      border-color: lighten($green, 10);
+    }
+  }
 }
 
 .alert {
@@ -162,5 +186,76 @@ body {
   &--danger {
     background-color: $red;
     color: $white;
+  }
+}
+
+.errors {
+  background-color: $red;
+  color: $white;
+  padding: 0.5rem;
+  box-sizing: border-box;
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.new-message {
+
+}
+
+.message {
+  background-color: $white;
+  padding: 0.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 0.5rem;
+
+  &__content {
+    grid-column: 1 / span 2;
+    padding: 0.5rem 0;
+  }
+
+  &__author, &__timestamp {
+    font-size: 0.8rem;
+    opacity: 0.8;
+  }
+
+  &__timestamp {
+    text-align: right;
+  }
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.5rem 0;
+  border: 2px solid $grey;
+
+  thead {
+    tr {
+      th {
+        background-color: $grey;
+        color: $white;
+        font-weight: 700;
+        padding: 0.5rem;
+        text-align: left;
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      td {
+        background-color: $white;
+        padding: 0.5rem;
+        border-bottom: 2px solid $grey;
+      }
+
+      :last-child td {
+        border-bottom: none;
+      }
+    }
   }
 }
